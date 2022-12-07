@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "naver-image-scraper"
+version = "0.1.0"
+description = ""
+authors = ["Kenneth V. Domingo <hello@kvdomingo.xyz>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+requests = "^2.28.1"
+beautifulsoup4 = "^4.11.1"
+lxml = "^4.9.1"
+loguru = "^0.6.0"
+tqdm = "^4.64.1"
+selenium = "^4.7.2"
+
+[tool.poetry.group.dev.dependencies]
+black = {extras = ["d"], version = "^22.10.0"}
+isort = "^5.10.1"
+pyinstaller = "^5.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"

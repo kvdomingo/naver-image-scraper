@@ -1,0 +1,11 @@
+version: '3'
+
+env:
+  NAME: naver-scraper
+
+tasks:
+  default:
+    desc: Build standalone executables for Windows and Linux
+    cmds:
+      - pyinstaller -F --clean --name {{.NAME}} setup.py
+      - docker run -v "$(pwd)":/build --rm --env NAME={{.NAME}} --name naver-scraper-build-linux --workdir /build kvdomingo/py-cli-builder:latest
